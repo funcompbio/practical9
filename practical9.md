@@ -30,7 +30,7 @@ Please follow the next two steps:
    into a folder called "Downloads" or under a name corresponding to the
    translation of "Downloads" to the default language of your operating system.
 3. Make a directory in your filesystem, for instance at your _home_ directory,
-   called `practical 8` and copy in it the downloaded file.
+   called `practical9` and copy in it the downloaded file.
 4. Since the downloaded file is a ZIP file, uncompress as you did in
    [practical 1](/practical1/) so that you finally have a file called
    `catalunya_setmanal.csv` in the directory `practical8`.
@@ -57,3 +57,98 @@ RStudio window splitted in four panes, the default three ones and one additional
 one for the newly created R script, as shown in the captured window below.
 
 ![](RStudioNewScript.png)
+
+Type in the newly created R script (either with a text editor or with RStudio)
+the following two lines to read the CSV file downloaded in the previous section.
+The first line is a comment. Lines starting with the `#` symbol are comments in R.
+
+```
+## read COVID19 data
+dat <- read.csv("catalunya_setmanal.csv")
+```
+
+Now save the R script in the directory `practical9` under the filename
+`covid19analysis.R`.
+
+To execute a specific line of an R script in RStudio you should move the cursor
+to that line in the pane with the script file and press the key combination
+`Ctrl+Enter`. Alternatively, you can also copy and paste the line from the script
+to the R shell, specially if you are not working with RStudio.
+
+The previous line may produce an error if the current working directory of
+R is not pointing to the directory where the file `catalunya_setmanal.csv` is;
+see previous [practical 8](/practical8/) if you need to find out how to change
+the working directory in R and RStudio. In general, changing the working directory
+should be always performed in the R shell and never include the instruction that
+changes the working directory in an R script. The reason is because you or somebody
+else may want to run that script in a different computer where the directory with
+the data may be called differently.
+
+Add to the script `covid19analysis.R` the necessary code to obtain a new `data.frame`
+object including only data from the general population, i.e., excluding data from
+geriatric residences.
+
+# Date-data management
+
+These are the first 6 rows of the previously loaded CSV file:
+
+```
+> head(dat)
+        NOM      CODI   DATA_INI    DATA_FI RESIDENCIA IEPG_CONFIRMAT
+1 CATALUNYA CATALUNYA 2020-11-01 2020-11-07         --             NA
+2 CATALUNYA CATALUNYA 2020-11-01 2020-11-07         Si             NA
+3 CATALUNYA CATALUNYA 2020-11-01 2020-11-07         No        611.099
+4 CATALUNYA CATALUNYA 2020-10-31 2020-11-06         --             NA
+5 CATALUNYA CATALUNYA 2020-10-31 2020-11-06         Si             NA
+6 CATALUNYA CATALUNYA 2020-10-31 2020-11-06         No        641.672
+  R0_CONFIRMAT_M      IA14 TAXA_CASOS_CONFIRMAT CASOS_CONFIRMAT TAXA_PCR_TAR
+1             NA    0.0000               0.0000             529        0.000
+2             NA 2798.2745            1396.7672             884    16680.624
+3       0.880132  694.3272             306.0293           23372     3137.612
+4             NA    0.0000               0.0000             546        0.000
+5             NA 2844.0961            1439.4286             911    17522.792
+6       0.906287  708.0233             317.5911           24255     3213.137
+     PCR   TAR PERC_PCR_TAR_POSITIVES INGRESSOS_TOTAL INGRESSOS_CRITIC EXITUS
+1   3582   166                 7.3237              68               15      0
+2   8469  2088                10.4550             114                5    139
+3 178471 61154                10.7314            1512              295    312
+4   3890   164                 7.0030              71               14      0
+5   8937  2153                10.1535             114                6    153
+6 184715 60678                10.8609            1578              279    315
+```
+
+It has two columns with date information (`DATA_INI` and `DATA_FI`), but which
+are stored as string characters (more specifically _factors_). However, R
+provides a way to store dates as such and this has the advantage that
+facilitates manipulating them for analysis purposes.
+
+For instance, to two transform the two columns containing date data we should
+use the function `as.Date()` as follows:
+
+```
+> startdate <- as.Date(dat$DATA_INI)
+> enddate <- as.Date(dat$DATA_FI)
+```
+
+While R displays these objects as vectors of character strings, they do belong to
+a different class of objects, the class _Date_.
+
+```
+> head(startdate)
+[1] "2020-11-01" "2020-11-01" "2020-11-01" "2020-10-31" "2020-10-31" "2020-10-31"
+> class(startdate)
+[1] "Date"
+> head(enddate)
+[1] "2020-11-07" "2020-11-07" "2020-11-07" "2020-11-06" "2020-11-06" "2020-11-06"
+> class(enddate)
+[1] "Date"
+```
+
+Having dates stored as `Date`-class objects facilitates operations on dates such
+as calculating time differences:
+
+```
+> head(enddate - startdate + 1)
+Time differences in days
+[1] 7 7 7 7 7 7
+```
