@@ -152,3 +152,12 @@ as calculating time differences:
 Time differences in days
 [1] 7 7 7 7 7 7
 ```
+or extracting the month of each date:
+
+```
+> month <- months.Date(startdate))
+> head(month)
+[1] "November" "November" "November" "October"  "October"  "October" 
+> class(month)
+[1] "character"
+```

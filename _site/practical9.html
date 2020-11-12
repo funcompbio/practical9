@@ -68,3 +68,9 @@ dat &lt;- read.csv(&quot;catalunya_setmanal.csv&quot;)</code></pre>
 <pre><code>&gt; head(enddate - startdate + 1)
 Time differences in days
 [1] 7 7 7 7 7 7</code></pre>
+<p>or extracting the month of each date:</p>
+<pre><code>&gt; month &lt;- months.Date(startdate))
+&gt; head(month)
+[1] &quot;November&quot; &quot;November&quot; &quot;November&quot; &quot;October&quot;  &quot;October&quot;  &quot;October&quot; 
+&gt; class(month)
+[1] &quot;character&quot;</code></pre>
