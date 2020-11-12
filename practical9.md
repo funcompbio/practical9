@@ -10,7 +10,9 @@ The learning objectives for this practical are:
 
   * Writing R scripts.
   * How to manipulate dates in data.
-  * Factors.
+  * How to create and use factor objects.
+  * How to create and use list objects.
+  * Learn visualizing data in different ways.
 
 # Setup and background
 
@@ -255,14 +257,135 @@ of the columns `R0_CONFIRMAT_M` (R0 basic reproduction number) and
 function of the month, calling plot with the formula notation `x ~ y`:
 
 ```
-plot(datg$R0_CONFIRMAT_M ~ mf)
-``
+> plot(datg$R0_CONFIRMAT_M ~ mf)
+```
 where here `datg` refers to the subset of the original `data.frame`
 object `dat`, excluding data from geriatric residences, and `mf` refers
-to the factor object with the months from that subset of data.
+to the factor object with the months from that subset of data. The resulting
+plot contains so-called [box plots](https://en.wikipedia.org/wiki/Box_plot)
+for each month, which allow to visualize the location of the data in terms
+of [quartiles](https://en.wikipedia.org/wiki/Quartile).
 
 Once you have obtained the plot, look up in the help page of the `plot()`
 function, how can you change the labels for the `x` and `y` axes to a more
 readable label. The resulting plot should be similar to the one below.
 
 ![](R0byMonth.png)
+
+We can see that February has no data points for the column `R0_CONFIRMAT_M`
+despite there are data rows for that month. To find out why we do not see
+any data on the plot we can inspect the values of `R0_CONFIRMAT_M` for
+the month of February as follows:
+
+```
+> datg$R0_CONFIRMAT_M[mf == "Feb"]
+[1] NA NA NA NA NA NA
+```
+The value `NA` in R means _not available_ and R treats it in a special
+way depending on the operation that is performing. In the case of plots, `NA`
+values are ignored.
+
+Plot now the risk of outbreak as function of the month, can you
+identify the month in which this risk has increased the most? Add the two
+plotting instructions to the `covid19analysis.R` script.
+
+# Lists and implicit looping
+
+Lists allow one to group values through their elements. Let's say we want
+to group the values of the risk of outbreak in the previous data, by the
+month in which the data belongs to. We can do that using the function
+`split()` to which we should give a first argument of the values we want
+to group and a second argument with the grouping factor.
+
+```
+> iepgbymonth <- split(datg$IEPG_CONFIRMAT, mf)
+> class(iepgbymonth)
+[1] "list"
+> length(iepgbymonth)
+[1] 10
+> names(iepgbymonth)
+ [1] "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov"
+> head(iepgbymonth, n=3)
+$Feb
+[1] NA NA NA NA NA NA
+
+$Mar
+ [1] 154.523 168.052 176.403 188.101 206.879 225.887 245.803 263.842 275.744
+[10] 289.553 309.236 349.668 374.001 392.650 410.941 411.181 445.455 452.179
+[19] 398.809 346.643 284.823 225.282 144.230 107.113      NA      NA      NA
+[28]      NA      NA      NA      NA
+
+$Apr
+ [1]  24.1050  26.1615  28.3733  31.1514  33.6115  36.4087  42.9276  46.9114
+ [9]  51.8729  57.1702  61.3704  64.4527  68.6624  71.0281  76.4523  78.9826
+[17]  82.4250  86.9431  87.4165  86.3060  87.9184  92.1927  98.2542 105.1500
+[25] 118.3170 121.8560 124.6690 130.1430 136.0640 144.0100
+```
+
+Grouping values can be useful in data analysis when we want to examine the
+data separately by groups. Let's say we want to visualize the distribution
+of values of the risk of outbreak for the month of April and June, next to
+each other. We can use the function `hist()` for that purpose, creating a
+grid of two plotting panes using the `par()` function, as follows:
+
+```
+> par(mfrow=c(1, 2))
+> hist(iepgbymonth$Apr, xlab="Risk of outbreak", main="April")
+> hist(iepgbymonth$Jun, xlab="Risk of outbreak", main="June")
+```
+
+![](IEPGAprilJune.png)
+
+Now, let's calculate the mean of the risk of outbreak for the month of April.
+Having built the previous `list` object, we can make that calculation applying
+the function `mean()` to the corresponding element of the list:
+
+```
+> mean(iepgbymonth$Apr)
+[1] 76.71023
+```
+Let's say we want to compare this value with the mean value for the month of
+March:
+
+```
+> mean(iepgbymonth$Mar)
+[1] NA
+```
+Here we got an `NA` value because the month of March has missing values for
+some weeks and, by default, the function `mean()` propagates that `NA` value
+to the result. We can ask the `mean()` function to exclude `NA` values and
+do the calculation on the non-missing ones using the argument `na.rm=TRUE`:
+
+```
+> mean(iepgbymonth$Mar, na.rm=TRUE)
+[1] 285.2916
+```
+It would be tedious to do that calculation for each different month by
+writing one such function call for each element of the list. As an alternative,
+we could use a `while` or `for` loop that would iterate over the elements of
+the list. However, R provides a more compact way to iterating over lists,
+and other objects, by using functions for _implicit_
+[looping](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Looping)
+such as `lapply()` or `sapply()`. These functions take a list as a first argument,
+iterate through each element of that list, and at each iteration apply the function
+given in the second argument. Additional arguments can be given and will be passed
+to the _applied_ function.
+
+The function `lapply()` returns again the input list with its elements replaced
+by the result given by the function on each corresponding element, while the
+function `sapply()` attempts to simplify the resulting data structure in that if
+each element of the resulting list has length 1, then it return an atomic vector.
+
+We can calculate the mean of the risk of outbreak per month with the following
+call to the `sapply()` function:
+
+```
+> sapply(iepgbymonth, mean, na.rm=TRUE)
+      Feb       Mar       Apr       May       Jun       Jul       Aug       Sep 
+      NaN 285.29158  76.71023  25.66524  20.77437 153.58826 190.42042 207.93477 
+      Oct       Nov 
+702.40661 607.29200 
+```
+where here the argument `na.rm=TRUE` is passed by `sapply()` to each call to
+the `mean()` function. Try the same call using the `lapply()` function and
+notice the difference in the output.
