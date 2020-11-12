@@ -10,6 +10,7 @@ The learning objectives for this practical are:
 
   * Writing R scripts.
   * How to manipulate dates in data.
+  * Factors.
 
 # Setup and background
 
@@ -156,12 +157,15 @@ Time differences in days
 or extracting the month of each date:
 
 ```
-> month <- months.Date(startdate))
-> head(month)
-[1] "November" "November" "November" "October"  "October"  "October" 
-> class(month)
+> m <- months(startdate, abbreviate=TRUE))
+> head(m)
+[1] "Nov" "Nov" "Nov" "Oct" "Oct" "Oct"
+> class(m)
 [1] "character"
 ```
+where we have use the argument `abbreviate=TRUE` in the `months()` function
+to obtain a vector of equally sized character strings, which may be useful
+for visualization purposes.
 
 # Factors
 
@@ -181,14 +185,14 @@ represent any kind of _category_ grouping observations.
 Factors are useful, however, in the context of a statistical analysis and
 data visualization, involving categorical variables. To create a factor
 object we should call the function `factor()` giving a vector of character
-strings as argument. Let's consider converting the previous vector `month`
+strings as argument. Let's consider converting the previous vector `m`
 of character strings to a factor.
 
 ```
-> monthf <- factor(month)
-> head(monthf)
-[1] November November November October  October  October 
-10 Levels: April August February July June March May November ... September
+> mf <- factor(m)
+> head(mf)
+[1] Nov Nov Nov Oct Oct Oct
+Levels: Apr Aug Feb Jul Jun Mar May Nov Oct Sep
 ```
 We can see that R displays factors differently to character strings, by
 showing the values without double quotes (`"`) and providing additional
@@ -197,9 +201,68 @@ level information from a factor object with the functions `levels()` and
 `nlevels()`.
 
 ```
-> levels(monthf)
- [1] "April"     "August"    "February"  "July"      "June"      "March"    
- [7] "May"       "November"  "October"   "September"
-> nlevels(monthf)
+> levels(mf)
+ [1] "Apr" "Aug" "Feb" "Jul" "Jun" "Mar" "May" "Nov" "Oct" "Sep"
+> nlevels(mf)
 [1] 10
 ```
+Sometimes, we may want the levels of a factor to comprise a set of specific
+values or to be ordered in a specific way. This could be the case of the
+previous factor `mf`, where we would like for instance to have the
+levels corresponding to the months of the year. We can do that as follows:
+
+```
+> mf <- factor(m, levels=c("Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+> head(mf)
+[1] Nov Nov Nov Oct Oct Oct
+Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+> levels(mf)
+ [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"
+> nlevels(mf)
+[1] 12
+```
+We can build a contingency table of the level occurrences of a factor
+using the function `table()`.
+
+```
+> table(mf)
+mf
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec 
+  0  18  93  90  93  90  93  93  90  93   3   0
+```
+We can see, there is no data in 2020 for the months of January (because
+data was not yet recorded) and December (because it was November at the
+time of elaborating this practical). We can remove levels of a factor
+for which there is no data with the function `droplevels()`.
+
+```
+> mf <- droplevels(mf)
+> levels(mf)
+ [1] "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov"
+> table(mf)
+mf
+Feb Mar Apr May Jun Jul Aug Sep Oct Nov 
+ 18  93  90  93  90  93  93  90  93   3 
+```
+
+Add the necessary lines of code to the script `covid19analysis.R` to
+create a factor object with the months in which each data row was
+recorded in the general population, i.e., excluding data from geriatric
+residences. Using this factor we can easily visualize the distribution
+of the columns `R0_CONFIRMAT_M` (R0 basic reproduction number) and
+`IEPG_CONFIRMAT` (risk of outbreak) in the general population, as
+function of the month, calling plot with the formula notation `x ~ y`:
+
+```
+plot(datg$R0_CONFIRMAT_M ~ mf)
+``
+where here `datg` refers to the subset of the original `data.frame`
+object `dat`, excluding data from geriatric residences, and `mf` refers
+to the factor object with the months from that subset of data.
+
+Once you have obtained the plot, look up in the help page of the `plot()`
+function, how can you change the labels for the `x` and `y` axes to a more
+readable label. The resulting plot should be similar to the one below.
+
+![](R0byMonth.png)
