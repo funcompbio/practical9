@@ -160,7 +160,7 @@ Time differences in days
 or extracting the month of each date:
 
 ```
-> m <- months(startdate, abbreviate=TRUE))
+> m <- months(startdate, abbreviate=TRUE)
 > head(m)
 [1] "Nov" "Nov" "Nov" "Oct" "Oct" "Oct"
 > class(m)
