@@ -170,6 +170,24 @@ where we have use the argument `abbreviate=TRUE` in the `months()` function
 to obtain a vector of equally sized character strings, which may be useful
 for visualization purposes.
 
+**Important:** The previous vector `m` may contain the names of the months
+in a different language than English when the regional configuration of your
+operating system, known as
+[locale configuration](https://en.wikipedia.org/wiki/Locale_%28computer_software%29),
+is also different to English. In such a case, it may be handy to switch at
+least the regional time configuration to English, to facilitate following
+the rest of this practical. To do that, type the following instruction on
+the R shell:
+
+```
+> Sys.setlocale("LC_TIME", "C")
+```
+and then type again:
+```
+> m <- months(startdate, abbreviate=TRUE))
+```
+Verify that now the vector `m` has the month names in English.
+
 # Factors
 
 Factors in R are a class of objects that serves the purpose of storing what
@@ -225,7 +243,12 @@ Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 > nlevels(mf)
 [1] 12
 ```
-We can build a contingency table of the level occurrences of a factor
+**Important:** The previous call to the `factor()` function will **only work**
+if your regional time configuration is English. If you are working with a
+non-English regional time configuration, you should change the level names
+in the argument `levels` to the language that you are using.
+
+Now, we can build a contingency table of the level occurrences of a factor
 using the function `table()`.
 
 ```
