@@ -38,7 +38,7 @@ Please follow the next two steps:
    called `practical9` and copy in it the downloaded file.
 4. Since the downloaded file is a ZIP file, uncompress as you did in
    [practical 1](/practical1/) so that you finally have a file called
-   `catalunya_setmanal.csv` in the directory `practical8`.
+   `catalunya_setmanal.csv` in the directory `practical9`.
 
 If you are using the UPF _myapps_ cloud to run RStudio, then you need to
 either use an internet browser in _myapps_ to download the data file directly
