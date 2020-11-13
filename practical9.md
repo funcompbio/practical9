@@ -12,6 +12,7 @@ The learning objectives for this practical are:
   * How to manipulate dates in data.
   * How to create and use factor objects.
   * How to create and use list objects.
+  * How to perform implicit looping through lists.
   * Learn visualizing data in different ways.
 
 # Setup and background
@@ -389,3 +390,10 @@ call to the `sapply()` function:
 where here the argument `na.rm=TRUE` is passed by `sapply()` to each call to
 the `mean()` function. Try the same call using the `lapply()` function and
 notice the difference in the output.
+
+Plot the distribution of the number of deaths (column `EXITUS`) per month in
+the general population (using box plots). Calculate the mean of the number of
+deaths per month in the general population and plot it over the previous box
+plots using the function `points()`. Check the help page of `point()` to find
+out how to use it, figure out how make the plotted point to be a solid diamond
+(**hint:** look at the argument `pch`).
