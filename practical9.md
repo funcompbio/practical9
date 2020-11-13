@@ -69,7 +69,7 @@ The first line is a comment. Lines starting with the `#` symbol are comments in 
 
 ```
 ## read COVID19 data
-dat <- read.csv("catalunya_setmanal.csv")
+dat <- read.csv("catalunya_setmanal.csv", sep=";", stringsAsFactors=TRUE)
 ```
 
 Now save the R script in the directory `practical9` under the filename
