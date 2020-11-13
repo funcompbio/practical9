@@ -394,6 +394,6 @@ notice the difference in the output.
 Plot the distribution of the number of deaths (column `EXITUS`) per month in
 the general population (using box plots). Calculate the mean of the number of
 deaths per month in the general population and plot it over the previous box
-plots using the function `points()`. Check the help page of `point()` to find
+plots using the function `points()`. Check the help page of `points()` to find
 out how to use it, figure out how make the plotted point to be a solid diamond
 (**hint:** look at the argument `pch`).
