@@ -223,4 +223,6 @@ Once you are finished with the tutorial, create a Markdown version of your previ
 file `index.html`, i.e., a `index.md` file, with all the previous content
 but formatted using Markdown only. Store that `index.md` file in the `docs`
 directory of the GitHub repo you created in the previous section. Rename the
-file `index.html` to `old_index.html`.
+file `index.html` to `old_index.html`. Stage, commit and push these changes
+to the remote GitHub repo. Checkout after a few minutes that the website has
+been updated.
