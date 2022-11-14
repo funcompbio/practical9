@@ -191,8 +191,9 @@ URL.
 Each time that you push changes in the `docs` directory to the remote GitHub
 repo, GitHub will have to _rebuild_ and _publish_ your website, which may take 
 a few minutes. You can see how GitHub is building your webiste by going to the
-the page of your GitHub repo at `https://github.com/funcompbio2021/my-website-xxxx`
-and clicking on the orange dot.
+the page of your GitHub repo at `https://github.com/funcompbio2022/my-website-xxxx`
+and clicking on the orange dot and then in the `Details` links from the pop-up
+menu.
 
 ![](mywebsite6.png)  
 
