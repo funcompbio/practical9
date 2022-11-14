@@ -2,28 +2,43 @@
 <p>The learning objectives for this practical are:</p>
 <ul>
 <li>Create HTML documents.</li>
+<li>Publish your website with GitHub Pages.</li>
 <li>Create Markdown documents.</li>
 </ul>
 <h1 id="setup-and-background">Setup and background</h1>
-<p>To do this practical you only need text editor an a web browser. Make a new directory called <code>practical9</code> and store there the files generated during this practical.</p>
+<p>To do this practical you only need text editor an a web browser. Make
+a new directory called <code>practical9</code> and store there the files
+generated during this practical.</p>
 <h1 id="html-documents">HTML documents</h1>
 <p>The basic skeleton for an HTML document consists of:</p>
 <ol type="1">
-<li><p>A <a href="https://www.w3schools.com/tags/ref_html_dtd.asp">DOCTYPE</a> element that tells the web browser this is an HTML document:</p>
+<li><p>A <a
+href="https://www.w3schools.com/tags/ref_html_dtd.asp">DOCTYPE</a>
+element that tells the web browser this is an HTML document:</p>
 <pre><code>&lt;!DOCTYPE html&gt;</code></pre></li>
-<li><p>A <a href="https://www.w3schools.com/tags/tag_head.asp">head</a> element, which contains metadata, enclosed in other HTML elements, about the whole document such as a title that is displayed in the browser tab displaying the HTML document. Another common metadata to be included here is the one associated with the <code>&lt;style&gt;</code> element.</p>
+<li><p>A <a href="https://www.w3schools.com/tags/tag_head.asp">head</a>
+element, which contains metadata, enclosed in other HTML elements, about
+the whole document such as a title that is displayed in the browser tab
+displaying the HTML document. Another common metadata to be included
+here is the one associated with the <code>&lt;style&gt;</code>
+element.</p>
 <pre><code>&lt;head&gt;
   &lt;title&gt;Page Title&lt;/title&gt;
 &lt;/head&gt;</code></pre></li>
-<li><p>A <a href="https://www.w3schools.com/tags/tag_body.asp">body</a> element with the main content of the HTML document, which in this case consists of a heading and a paragraph.</p>
+<li><p>A <a href="https://www.w3schools.com/tags/tag_body.asp">body</a>
+element with the main content of the HTML document, which in this case
+consists of a heading and a paragraph.</p>
 <pre><code>&lt;body&gt;
   &lt;h1&gt;This is a first-level heading&lt;/h1&gt;
 
   &lt;p&gt;This is a paragraph.&lt;/p&gt;
 &lt;/body&gt;</code></pre></li>
 </ol>
-<p>The elements in parts 2 and 3 of the skeleton are enclosed by starting <code>&lt;html&gt;</code> and ending <code>&lt;/html&gt;</code> elements. The whole skeleton together looks as follows:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<p>The elements in parts 2 and 3 of the skeleton are enclosed by
+starting <code>&lt;html&gt;</code> and ending <code>&lt;/html&gt;</code>
+elements. The whole skeleton together looks as follows:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;title&gt;</span>Page Title<span class="kw">&lt;/title&gt;</span></span>
@@ -34,58 +49,176 @@
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;p&gt;</span>This is a paragraph.<span class="kw">&lt;/p&gt;</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-<p>Using a text editor, copy and paste the previous code into a text file called <code>index.html</code>, and open it with the web browser (<code>File -&gt; Open File ...</code>).</p>
+<p>Using a text editor, copy and paste the previous code into a text
+file called <code>index.html</code>, and open it with the web browser
+(<code>File -&gt; Open File ...</code>).</p>
 <p>The basic HTML elements are:</p>
 <ul>
-<li><p>A text <a href="https://www.w3schools.com/tags/tag_hn.asp">headings</a>: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, …, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code>.</p></li>
-<li><p>A <a href="https://www.w3schools.com/tags/tag_p.asp">paragraph</a>: <code>&lt;p&gt;</code>.</p></li>
-<li><p>An <a href="https://www.w3schools.com/tags/tag_ul.asp">unordered (bulleted) list</a>: <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>.</p></li>
-<li><p>An <a href="https://www.w3schools.com/tags/tag_ol.asp">ordered list</a>: <code>&lt;ol&gt;</code> and <code>&lt;li&gt;</code>.</p></li>
-<li><p>A <a href="https://www.w3schools.com/tags/tag_a.asp">hyperlink</a>: <code>&lt;a&gt;</code> with the <code>href</code> attribute specifying the linked file or URL.</p></li>
-<li><p>An <a href="https://www.w3schools.com/tags/tag_img.asp">image</a>: <code>&lt;img&gt;</code> with the <code>src</code> attribute specifying the path to the image file.</p></li>
-<li><p>A <a href="https://www.w3schools.com/tags/tag_br.asp">single line break</a>: <code>&lt;br&gt;</code>.</p></li>
-<li><p>An <a href="https://www.w3schools.com/tags/tag_hr.asp">horizontal ruler</a>: <code>&lt;hr&gt;</code>.</p></li>
+<li><p>A text <a
+href="https://www.w3schools.com/tags/tag_hn.asp">headings</a>:
+<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, …,
+<code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code>.</p></li>
+<li><p>A <a
+href="https://www.w3schools.com/tags/tag_p.asp">paragraph</a>:
+<code>&lt;p&gt;</code>.</p></li>
+<li><p>An <a href="https://www.w3schools.com/tags/tag_ul.asp">unordered
+(bulleted) list</a>: <code>&lt;ul&gt;</code> and
+<code>&lt;li&gt;</code>.</p></li>
+<li><p>An <a href="https://www.w3schools.com/tags/tag_ol.asp">ordered
+list</a>: <code>&lt;ol&gt;</code> and <code>&lt;li&gt;</code>.</p></li>
+<li><p>A <a
+href="https://www.w3schools.com/tags/tag_a.asp">hyperlink</a>:
+<code>&lt;a&gt;</code> with the <code>href</code> attribute specifying
+the linked file or URL.</p></li>
+<li><p>An <a
+href="https://www.w3schools.com/tags/tag_img.asp">image</a>:
+<code>&lt;img&gt;</code> with the <code>src</code> attribute specifying
+the path to the image file.</p></li>
+<li><p>A <a href="https://www.w3schools.com/tags/tag_br.asp">single line
+break</a>: <code>&lt;br&gt;</code>.</p></li>
+<li><p>An <a href="https://www.w3schools.com/tags/tag_hr.asp">horizontal
+ruler</a>: <code>&lt;hr&gt;</code>.</p></li>
 </ul>
-<p><strong>Exercise:</strong> Using some of these elements, edit the file <code>index.html</code> and modify it to make a web page about your favorite (or unbeloved) music band. The page should include two sections, one with the origins of the band and its members, and another with its discography (shorten it to the most relevant one if it is too long). Add a picture of the band and a link to their official web page (if they don’t have one, then link to some other website that talks about them). Try to keep it under 30 lines. To display in the web browser the changes you make you need to (1) save the file in your text editor and (2) press the reload button in the tab from web browser where you loaded the page.</p>
+<p><strong>Exercise:</strong> Using some of these elements, edit the
+file <code>index.html</code> and modify it to make a web page about your
+favorite (or unbeloved) music band. The page should include two
+sections, one with the origins of the band and its members, and another
+with its discography (shorten it to the most relevant one if it is too
+long). Add a picture of the band and a link to their official web page
+(if they don’t have one, then link to some other website that talks
+about them). Try to keep it under 30 lines. To display in the web
+browser the changes you make you need to (1) save the file in your text
+editor and (2) press the reload button in the tab from web browser where
+you loaded the page.</p>
 <h2 id="styling-with-css">Styling with CSS</h2>
-<p>You can alter the <em>style</em> of HTML elements using so-called <a href="https://en.wikipedia.org/wiki/CSS">CSS</a> declarations. There are different ways to include them, one of them is through the <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section of the HTML document. For instance, edit your <code>index.html</code> file and add the following CSS declaration within the <code>&lt;head&gt;</code> section:</p>
+<p>You can alter the <em>style</em> of HTML elements using so-called <a
+href="https://en.wikipedia.org/wiki/CSS">CSS</a> declarations. There are
+different ways to include them, one of them is through the
+<code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code>
+section of the HTML document. For instance, edit your
+<code>index.html</code> file and add the following CSS declaration
+within the <code>&lt;head&gt;</code> section:</p>
 <pre><code>&lt;style&gt;
 h1 {
   font-family: arial;
 }
 &lt;/style&gt;</code></pre>
-<p>Now reload the page and you should see how the text associated with the first-level heading <code>&lt;h1&gt;</code> elements has changed its font. Consult the following <a href="https://www.w3schools.com/css/default.asp">link</a> and change in the file <code>index.html</code> the default black color of the first-level heading <code>&lt;h1&gt;</code> element into another one.</p>
-<h1 id="publish-your-website-with-github-pages">Publish your website with GitHub Pages</h1>
-<p>GitHub offers a free <a href="https://en.wikipedia.org/wiki/Web_hosting_service">web hosting service</a> called <a href="https://pages.github.com">GitHub Pages</a> with some <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">restrictions and usage limits</a> such as a maximum disk usage of 1 Gb. While those limits may be too tight for websites with high-resolution images and videos, they are large enough for text content with low resolution images and graphics, such as those produced in the context of data analysis projects.</p>
-<p>Here we are going to learn how to publish a website with GitHub pages, but using a private repo created through an assignment from <a href="https://classroom.github.com">GitHub Classroom</a>, which will make the website only visible after logging into GitHub with our credentials. Please follow these three steps to create the GitHub repo that we will use to publish your website:</p>
+<p>Now reload the page and you should see how the text associated with
+the first-level heading <code>&lt;h1&gt;</code> elements has changed its
+font. Consult the following <a
+href="https://www.w3schools.com/css/default.asp">link</a> and change in
+the file <code>index.html</code> the default black color of the
+first-level heading <code>&lt;h1&gt;</code> element into another
+one.</p>
+<h1 id="publish-your-website-with-github-pages">Publish your website
+with GitHub Pages</h1>
+<p>GitHub offers a free <a
+href="https://en.wikipedia.org/wiki/Web_hosting_service">web hosting
+service</a> called <a href="https://pages.github.com">GitHub Pages</a>
+with some <a
+href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">restrictions
+and usage limits</a> such as a maximum disk usage of 1 Gb. While those
+limits may be too tight for websites with high-resolution images and
+videos, they are large enough for text content with low resolution
+images and graphics, such as those produced in the context of data
+analysis projects.</p>
+<p>Here we are going to learn how to publish a website with GitHub
+pages, but using a private repo created through an assignment from <a
+href="https://classroom.github.com">GitHub Classroom</a>, which will
+make the website only visible after logging into GitHub with our
+credentials. Please follow these three steps to create the GitHub repo
+that we will use to publish your website:</p>
 <ol type="1">
 <li>Log into your GitHub account.</li>
-<li>Go to the Moodle site of FCB and click on the link called <em>Website assignment</em> and accept the assignment. This will create a private repo with an URL of the form <code>https://github.com/funcompbio2021/my-website-xxxx</code> where <code>xxxx</code> is your GitHub username.</li>
-<li>Clone this GitHub repo on your local disk. This step will create a directory called <code>my-website-xxxx</code> where <code>xxxx</code> is your GitHub username. Enter in this directory with the Unix <code>cd</code> command.</li>
+<li>Go to the Moodle site of FCB and click on the link called
+<em>Website assignment</em> and accept the assignment. This will create
+a private repo with an URL of the form
+<code>https://github.com/funcompbio2022/my-website-xxxx</code> where
+<code>xxxx</code> is your GitHub username.</li>
+<li>Clone this GitHub repo on your local disk. This step will create a
+directory called <code>my-website-xxxx</code> where <code>xxxx</code> is
+your GitHub username. Enter in this directory with the Unix
+<code>cd</code> command.</li>
 </ol>
-<p>GitHub will look up the contents of your website from a so-called <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites">publishing source</a> which can be either the root of your repo or a directory called <code>docs</code> in any branch including the default <code>main</code> branch. In certain settings, the publishing source is the root of a branch called <code>gh-pages</code>. In this practical, we will set as publishing source the <code>docs</code> directory of the main branch as follows.</p>
+<p>Now let’s put the website content in the right place of our repo, as
+follows:</p>
+<ol type="1">
+<li><strong>Within</strong> the directory of your
+<code>my-website-xxxx</code> repo, create another directory called
+<code>docs</code>.</li>
+<li>Copy in this directory called <code>docs</code> the file
+<code>index.html</code> you created before and any associated image
+files.</li>
+<li>From the root of your <code>my-website-xxxx</code> repo, stage,
+commit and push these changes to the remote GiHub repo.</li>
+</ol>
+<p>GitHub will look up the contents of your website from a so-called <a
+href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites">publishing
+source</a> which can be either the root of your repo or a directory
+called <code>docs</code> in any branch including the default
+<code>main</code> branch. In certain settings, the publishing source is
+the root of a branch called <code>gh-pages</code>. In this practical, we
+will set as publishing source the <code>docs</code> directory of the
+main branch as follows.</p>
 <ol type="1">
 <li><p>Click on the <code>Settings</code> tab of your repo.</p>
 <p><img src="mywebsite1.png" /></p></li>
-<li><p>Click on the <code>Pages</code> menu option on the left panel.</p>
+<li><p>Click on the <code>Pages</code> menu option on the left panel
+under <em>Code and automation</em>.</p>
 <p><img src="mywebsite2.png" /></p></li>
-<li><p>Click on the pull-down menu of the publishing source that says <code>None</code> and select the <code>main</code> branch.</p>
+<li><p>Click on the pull-down menu of the publishing source that says
+<code>None</code> in section <em>Branch</em>, and select the
+<code>main</code> branch.</p>
 <p><img src="mywebsite3.png" /></p></li>
-<li><p>Click on the pull-down menu of the publishing source that says <code>/(root)</code> and select <code>/docs</code>, then click on the <code>Save</code> button.</p>
+<li><p>Click on the pull-down menu of the publishing source that says
+<code>/(root)</code> and select <code>/docs</code>, then click on the
+<code>Save</code> button.</p>
 <p><img src="mywebsite4.png" /></p></li>
-<li><p>The GitHub Pages settings panel will refresh and at the top you should see the message <code>Your site is ready to be published at</code> followed by an URL. That’s the URL of your website, open it up in a new tab of your web browser.</p>
+<li><p>The GitHub Pages settings panel will refresh and at the top you
+should see the message <code>Your site is live at</code> followed by an
+URL. That’s the URL of your website, open it up in a new tab of your web
+browser.</p>
 <p><img src="mywebsite5.png" /></p></li>
 </ol>
-<p>At this point, GitHub is already publishing your website, although the website is empty and its main page only displays the <a href="https://en.wikipedia.org/wiki/HTTP_404">HTTP 404 message</a> <code>404 There isn't a GitHub Pages site here</code>. To put content on your website follow these steps:</p>
-<ol type="1">
-<li><p><strong>From the copy of your repo in your local copy disk</strong>, create a directory called <code>docs</code>.</p></li>
-<li><p>Copy into that directory called <code>docs</code> the file <code>index.html</code> and any associated image file.</p></li>
-<li><p>From the root of your repo, stage, commit and push these changes to the remote GitHub repo.</p></li>
-<li><p>Go to the page of your GitHub repo at <code>https://github.com/funcompbio2021/my-website-xxxx</code> and note that GitHub is building your website.</p>
-<p><img src="mywebsite6.png" /><br />
-When that build is finished, go to the tab where you had your website open with the <a href="https://en.wikipedia.org/wiki/HTTP_404">HTTP 404 message</a> and press the reload button in your browser. You should see now the content of your website published with GitHub Pages.</p></li>
-</ol>
-<p>GitHub Pages offers the possibility to have an URL associated with your GitHub account <code>https://xxxx.github.io</code>, where <code>xxxx</code> is your GitHub username and have a public website published under that URL. The steps to build that website are essentially the same as the previous ones with the addition that the repo hosting the publishing source of the website should be called <code>xxxx.github.io</code>. A very well paced guide to create such a public website with GitHub Pages is the one by <a href="http://jmcglone.com/guides/github-pages">Jonathan McGlone</a> and the <a href="https://lab.github.com">GitHub Learning Lab</a> has also very good interative <a href="https://lab.github.com/githubtraining/github-pages">course</a>. Another even easier option to publish HTML files under a public URL is <a href="https://app.netlify.com/drop">Netlify Drop</a>, which can be handy if you need to quickly share a website.</p>
+<p>If there is any error in the website code, or the publishing source
+is wrongly specified or not filled with content, GitHub will not show
+you the URL.</p>
+<p>Each time that you push changes in the <code>docs</code> directory to
+the remote GitHub repo, GitHub will have to <em>rebuild</em> and
+<em>publish</em> your website, which may take a few minutes. You can see
+how GitHub is building your webiste by going to the the page of your
+GitHub repo at
+<code>https://github.com/funcompbio2021/my-website-xxxx</code> and
+clicking on the orange dot.</p>
+<pre><code>![](mywebsite6.png)  </code></pre>
+<p>When that build is finished, you have to go to your website URL and
+press the reload button in your browser to see your website updated.</p>
+<p>GitHub Pages offers the possibility to have an URL associated with
+your GitHub account <code>https://xxxx.github.io</code>, where
+<code>xxxx</code> is your GitHub username and have a public website
+published under that URL. The steps to build that website are
+essentially the same as the previous ones with the addition that the
+repo hosting the publishing source of the website should be public and
+called <code>xxxx.github.io</code>. A very well paced guide to create
+such a public website with GitHub Pages is the one by <a
+href="http://jmcglone.com/guides/github-pages">Jonathan McGlone</a> and
+the <a href="https://lab.github.com">GitHub Learning Lab</a> has also
+very good interative <a
+href="https://github.com/skills/github-pages">course</a>. Another even
+easier option to publish HTML files under a public URL is <a
+href="https://app.netlify.com/drop">Netlify Drop</a>, which can be handy
+if you need to quickly share a website.</p>
 <h1 id="markdown">Markdown</h1>
-<p>We will learn Markdown as follows. In one tab of your browser open the <a href="https://commonmark.org/help">CommonMark reference page</a>. In another tab follow the 10-minute <a href="https://commonmark.org/help/tutorial">CommonMark tutorial</a>.</p>
-<p>Once you are finished with the tutorial, create a Markdown version of your previous file <code>index.html</code>, i.e., a <code>index.md</code> file, with all the previous content but formatted using Markdown only. Store that <code>index.md</code> file in the <code>docs</code> directory of the GitHub repo you created in the previous section. Rename the file <code>index.html</code> to <code>old_index.html</code>. Stage, commit and push these changes to the remote GitHub repo. Checkout after a few minutes that the website has been updated.</p>
+<p>We will learn Markdown as follows. In one tab of your browser open
+the <a href="https://commonmark.org/help">CommonMark reference page</a>.
+In another tab follow the 10-minute <a
+href="https://commonmark.org/help/tutorial">CommonMark tutorial</a>.</p>
+<p>Once you are finished with the tutorial, create a Markdown version of
+your previous file <code>index.html</code>, i.e., a
+<code>index.md</code> file, with all the previous content but formatted
+using Markdown only. Store that <code>index.md</code> file in the
+<code>docs</code> directory of the GitHub repo you created in the
+previous section. Rename the file <code>index.html</code> to
+<code>old_index.html</code>. Stage, commit and push these changes to the
+remote GitHub repo. Checkout after a few minutes that the website has
+been updated.</p>
