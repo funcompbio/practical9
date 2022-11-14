@@ -194,7 +194,8 @@ a few minutes. You can see how GitHub is building your webiste by going to the
 the page of your GitHub repo at `https://github.com/funcompbio2021/my-website-xxxx`
 and clicking on the orange dot.
 
-    ![](mywebsite6.png)  
+![](mywebsite6.png)  
+
 When that build is finished, you have to go to your website URL and press the
 reload button in your browser to see your website updated.
 
