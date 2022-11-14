@@ -9,6 +9,7 @@ permalink: /practical9/
 The learning objectives for this practical are:
 
   * Create HTML documents.
+  * Publish your website with GitHub Pages.
   * Create Markdown documents.
 
 # Setup and background
@@ -137,11 +138,20 @@ steps to create the GitHub repo that we will use to publish your website:
 1. Log into your GitHub account.
 2. Go to the Moodle site of FCB and click on the link called
    _Website assignment_ and accept the assignment. This will create a private
-   repo with an URL of the form `https://github.com/funcompbio2021/my-website-xxxx`
+   repo with an URL of the form `https://github.com/funcompbio2022/my-website-xxxx`
    where `xxxx` is your GitHub username.
 3. Clone this GitHub repo on your local disk. This step will create a directory
    called `my-website-xxxx` where `xxxx` is your GitHub username. Enter in this
    directory with the Unix `cd` command.
+
+Now let's put the website content in the right place of our repo, as follows:
+
+1. **Within** the directory of your `my-website-xxxx` repo, create another
+   directory called `docs`.
+2. Copy in this directory called `docs` the file `index.html` you created before
+   and any associated image files.
+3. From the root of your `my-website-xxxx` repo, stage, commit and push these
+   changes to the remote GiHub repo.
 
 GitHub will look up the contents of your website from a so-called
 [publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites) which can be either the root of your repo or a
@@ -154,12 +164,12 @@ main branch as follows.
 
     ![](mywebsite1.png)
 
-2. Click on the `Pages` menu option on the left panel.
+2. Click on the `Pages` menu option on the left panel under _Code and automation_.
 
     ![](mywebsite2.png)
 
-3. Click on the pull-down menu of the publishing source that says `None` and
- select the `main` branch.
+3. Click on the pull-down menu of the publishing source that says
+   `None` in section _Branch_, and select the `main` branch.
 
     ![](mywebsite3.png)
 
@@ -169,46 +179,34 @@ main branch as follows.
     ![](mywebsite4.png)
 
 5. The GitHub Pages settings panel will refresh and at the top you should see
-  the message `Your site is ready to be published at` followed by an URL. That's
+  the message `Your site is live at` followed by an URL. That's
   the URL of your website, open it up in a new tab of your web browser.
 
     ![](mywebsite5.png)
 
-At this point, GitHub is already publishing your website, although the website
-is empty and its main page only displays the
-[HTTP 404 message](https://en.wikipedia.org/wiki/HTTP_404)
-`404 There isn't a GitHub Pages site here`. To put content on your website
-follow these steps:
+If there is any error in the website code, or the publishing source is
+wrongly specified or not filled with content, GitHub will not show you the
+URL.
 
-1. **From the copy of your repo in your local copy disk**, create a directory
-called `docs`.
-
-2. Copy into that directory called `docs` the file `index.html` and any associated
-  image file.
-
-3. From the root of your repo, stage, commit and push these changes to the remote
-  GitHub repo.
-
-4. Go to the page of your GitHub repo at
-  `https://github.com/funcompbio2021/my-website-xxxx` and note that GitHub is building
-  your website.
+Each time that you push changes in the `docs` directory to the remote GitHub
+repo, GitHub will have to _rebuild_ and _publish_ your website, which may take 
+a few minutes. You can see how GitHub is building your webiste by going to the
+the page of your GitHub repo at `https://github.com/funcompbio2021/my-website-xxxx`
+and clicking on the orange dot.
 
     ![](mywebsite6.png)  
-  When that build is finished, go to the tab where you had your website
-  open with the [HTTP 404 message](https://en.wikipedia.org/wiki/HTTP_404) and press
-  the reload button in your browser. You should see now the content of your website
-  published with GitHub Pages.
-
+When that build is finished, you have to go to your website URL and press the
+reload button in your browser to see your website updated.
 
 GitHub Pages offers the possibility to have an URL associated with your GitHub account
 `https://xxxx.github.io`, where `xxxx` is your GitHub username and have a public website
 published under that URL. The steps to build that website are essentially the same as
 the previous ones with the addition that the repo hosting the publishing source of the
-website should be called `xxxx.github.io`. A very well paced guide to create such a
-public website with GitHub Pages is the one by
+website should be public and called `xxxx.github.io`. A very well paced guide to create
+such a public website with GitHub Pages is the one by
 [Jonathan McGlone](http://jmcglone.com/guides/github-pages) and the
 [GitHub Learning Lab](https://lab.github.com) has also very good interative
-[course](https://lab.github.com/githubtraining/github-pages). Another
+[course](https://github.com/skills/github-pages). Another
 even easier option to publish HTML files under a public URL is
 [Netlify Drop](https://app.netlify.com/drop), which can be handy if you need to quickly
 share a website.
