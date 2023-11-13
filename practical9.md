@@ -138,7 +138,7 @@ steps to create the GitHub repo that we will use to publish your website:
 1. Log into your GitHub account.
 2. Go to the Moodle site of FCB and click on the link called
    _Website assignment_ and accept the assignment. This will create a private
-   repo with an URL of the form `https://github.com/funcompbio2022/my-website-xxxx`
+   repo with an URL of the form `https://github.com/funcompbio2023/my-website-xxxx`
    where `xxxx` is your GitHub username.
 3. Clone this GitHub repo on your local disk. This step will create a directory
    called `my-website-xxxx` where `xxxx` is your GitHub username. Enter in this
@@ -191,7 +191,7 @@ URL.
 Each time that you push changes in the `docs` directory to the remote GitHub
 repo, GitHub will have to _rebuild_ and _publish_ your website, which may take 
 a few minutes. You can see how GitHub is building your webiste by going to the
-the page of your GitHub repo at `https://github.com/funcompbio2022/my-website-xxxx`
+the page of your GitHub repo at `https://github.com/funcompbio2023/my-website-xxxx`
 and clicking on the orange dot and then in the `Details` links from the pop-up
 menu.
 
