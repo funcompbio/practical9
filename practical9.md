@@ -210,7 +210,8 @@ the previous ones with the addition that the repo hosting the publishing source 
 website should be public and called `xxxx.github.io`. A very well paced guide to create
 such a public website with GitHub Pages is the one by
 [Jonathan McGlone](http://jmcglone.com/guides/github-pages) and the
-[GitHub Learning Lab](https://lab.github.com) has also very good interative
+[GitHub Learning Lab](https://github.com/apps/github-learning-lab) has also
+very good interative
 [course](https://github.com/skills/github-pages). Another
 even easier option to publish HTML files under a public URL is
 [Netlify Drop](https://app.netlify.com/drop), which can be handy if you need to quickly
