@@ -168,25 +168,28 @@ main branch as follows.
 
     ![](mywebsite2.png)
 
-3. Click on the pull-down menu of the publishing source that says
-   `None` in section _Branch_, and select the `main` branch.
+3. In the section **Build and deployment**, under the subsection **Branch**,
+   click on the pull-down menu that by default says `None` and select the
+   `main` branch.
 
     ![](mywebsite3.png)
 
-4. Click on the pull-down menu of the publishing source that says `/(root)`
- and select `/docs`, then click on the `Save` button.
+4. Click on the pull-down menu that says `/(root)` and select `/docs`, then
+   click on the `Save` button.
 
     ![](mywebsite4.png)
 
-5. The GitHub Pages settings panel will refresh and at the top you should see
-  the message `Your site is live at` followed by an URL. That's
-  the URL of your website, open it up in a new tab of your web browser.
+5. The GitHub Pages settings panel will refresh automatically and at the top
+   you should see the message `GitHub Pages source saved. If you refresh the
+   page through the reload button of the browser you should see a new message
+   at the top that says `Your site is live at` followed by an URL. That's
+   the URL of your website, open it up in a new tab of your web browser.
 
     ![](mywebsite5.png)
 
-If there is any error in the website code, or the publishing source is
-wrongly specified or not filled with content, GitHub will not show you the
-URL.
+If there is any error in the website code, or the publishing source (branch
+and directory) is wrongly specified or not filled with content, GitHub will
+not show you the URL.
 
 Each time that you push changes in the `docs` directory to the remote GitHub
 repo, GitHub will have to _rebuild_ and _publish_ your website, which may take 
