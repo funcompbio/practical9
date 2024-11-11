@@ -138,27 +138,28 @@ steps to create the GitHub repo that we will use to publish your website:
 1. Log into your GitHub account.
 2. Go to the Moodle site of FCB and click on the link called
    _Website assignment_ and accept the assignment. This will create a private
-   repo with an URL of the form `https://github.com/funcompbio2023/my-website-xxxx`
-   where `xxxx` is your GitHub username.
+   repo with an URL of the form `https://github.com/FBC-XXXX/my-website-YYYY`
+   where `XXXX` is the year edition of the FCB course and `YYYY` is your GitHub
+   username.
 3. Clone this GitHub repo on your local disk. This step will create a directory
-   called `my-website-xxxx` where `xxxx` is your GitHub username. Enter in this
+   called `my-website-YYYY` where `YYYY` is your GitHub username. Enter in this
    directory with the Unix `cd` command.
 
 Now let's put the website content in the right place of our repo, as follows:
 
-1. **Within** the directory of your `my-website-xxxx` repo, create another
+1. **Within** the directory of your `my-website-YYYY` repo, create another
    directory called `docs`.
 2. Copy in this directory called `docs` the file `index.html` you created before
    and any associated image files.
-3. From the root of your `my-website-xxxx` repo, stage, commit and push these
+3. From the root of your `my-website-YYYY` repo, stage, commit and push these
    changes to the remote GiHub repo.
 
 GitHub will look up the contents of your website from a so-called
-[publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites) which can be either the root of your repo or a
-directory called `docs` in any branch including the default `main` branch. In
-certain settings, the publishing source is the root of a branch called `gh-pages`.
-In this practical, we will set as publishing source the `docs` directory of the
-main branch as follows.
+[publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites)
+which can be either the root of your repo or a directory called `docs` in any
+branch including the default `main` branch. In certain settings, the publishing
+source is the root of a branch called `gh-pages`. In this practical, we will
+set as publishing source the `docs` directory of the main branch as follows.
 
 1. Click on the `Settings` tab of your repo.
 
@@ -194,7 +195,8 @@ not show you the URL.
 Each time that you push changes in the `docs` directory to the remote GitHub
 repo, GitHub will have to _rebuild_ and _publish_ your website, which may take 
 a few minutes. You can see how GitHub is building your webiste by going to the
-the page of your GitHub repo at `https://github.com/funcompbio2023/my-website-xxxx`
+the page of your GitHub repo at
+`https://github.com/FCB-XXXX/my-website-YYYY`
 and clicking on the orange dot and then in the `Details` links from the pop-up
 menu.
 
@@ -203,30 +205,32 @@ menu.
 When that build is finished, you have to go to your website URL and press the
 reload button in your browser to see your website updated.
 
-GitHub Pages offers the possibility to have an URL associated with your GitHub account
-`https://xxxx.github.io`, where `xxxx` is your GitHub username and have a public website
-published under that URL. The steps to build that website are essentially the same as
-the previous ones with the addition that the repo hosting the publishing source of the
-website should be public and called `xxxx.github.io`. A very well paced guide to create
-such a public website with GitHub Pages is the one by
+GitHub Pages offers the possibility to have an URL associated with your GitHub
+account `https://YYYY.github.io`, where `YYYY` is your GitHub username and have
+a public website published under that URL. The steps to build that website are
+essentially the same as the previous ones with the addition that the repo
+hosting the publishing source of the website should be public and called
+`YYYY.github.io`. A very well paced guide to create such a public website with
+GitHub Pages is the one by
 [Jonathan McGlone](http://jmcglone.com/guides/github-pages) and the
 [GitHub Learning Lab](https://github.com/apps/github-learning-lab) has also
 very good interative
 [course](https://github.com/skills/github-pages). Another
 even easier option to publish HTML files under a public URL is
-[Netlify Drop](https://app.netlify.com/drop), which can be handy if you need to quickly
-share a website.
+[Netlify Drop](https://app.netlify.com/drop), which can be handy if you need to
+quickly share a website.
 
 # Markdown
 
 We will learn Markdown as follows. In one tab of your browser open the
 [CommonMark reference page](https://commonmark.org/help). In another tab
-follow the 10-minute [CommonMark tutorial](https://commonmark.org/help/tutorial).
+follow the 10-minute
+[CommonMark tutorial](https://commonmark.org/help/tutorial).
 
-Once you are finished with the tutorial, create a Markdown version of your previous
-file `index.html`, i.e., a `index.md` file, with all the previous content
-but formatted using Markdown only. Store that `index.md` file in the `docs`
-directory of the GitHub repo you created in the previous section. Rename the
-file `index.html` to `old_index.html`. Stage, commit and push these changes
+Once you are finished with the tutorial, create a Markdown version of your
+previous file `index.html`, i.e., a `index.md` file, with all the previous
+content but formatted using Markdown only. Store that `index.md` file in the
+`docs` directory of the GitHub repo you created in the previous section. Rename
+the file `index.html` to `old_index.html`. Stage, commit and push these changes
 to the remote GitHub repo. Checkout after a few minutes that the website has
 been updated.
