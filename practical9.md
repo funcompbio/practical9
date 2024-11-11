@@ -137,10 +137,10 @@ steps to create the GitHub repo that we will use to publish your website:
 
 1. Log into your GitHub account.
 2. Go to the Moodle site of FCB and click on the link called
-   _Website assignment_ and accept the assignment. This will create a private
-   repo with an URL of the form `https://github.com/FBC-XXXX/my-website-YYYY`
-   where `XXXX` is the year edition of the FCB course and `YYYY` is your GitHub
-   username.
+   _Website GitHub Classroom assignment link_ and accept the assignment. This
+   will create a private repo with an URL of the form
+   `https://github.com/FBC-XXXX/my-website-YYYY` where `XXXX` is the year
+   edition of the FCB course and `YYYY` is your GitHub username.
 3. Clone this GitHub repo on your local disk. This step will create a directory
    called `my-website-YYYY` where `YYYY` is your GitHub username. Enter in this
    directory with the Unix `cd` command.
@@ -181,8 +181,8 @@ set as publishing source the `docs` directory of the main branch as follows.
     ![](mywebsite4.png)
 
 5. The GitHub Pages settings panel will refresh automatically and at the top
-   you should see the message `GitHub Pages source saved. If you refresh the
-   page through the reload button of the browser you should see a new message
+   you should see the message `GitHub Pages source saved`. You should refresh
+   the page through the reload button of the browser until you see a new message
    at the top that says `Your site is live at` followed by an URL. That's
    the URL of your website, open it up in a new tab of your web browser.
 
