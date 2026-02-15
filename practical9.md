@@ -137,7 +137,7 @@ steps to create the GitHub repo that we will use to publish your website:
 
 1. Log into your GitHub account.
 2. Go to the Moodle site of FCB and click on the link called
-   _Website GitHub Classroom assignment link_ and accept the assignment. This
+   _Practical 9 Website GitHub Classroom assignment link_ and accept the assignment. This
    will create a private repo with an URL of the form
    `https://github.com/FBC-XXXX/my-website-YYYY` where `XXXX` is the year
    edition of the FCB course and `YYYY` is your GitHub username.
@@ -155,7 +155,7 @@ Now let's put the website content in the right place of our repo, as follows:
    changes to the remote GiHub repo.
 
 GitHub will look up the contents of your website from a so-called
-[publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites)
+[publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 which can be either the root of your repo or a directory called `docs` in any
 branch including the default `main` branch. In certain settings, the publishing
 source is the root of a branch called `gh-pages`. In this practical, we will
@@ -184,7 +184,9 @@ set as publishing source the `docs` directory of the main branch as follows.
    you should see the message `GitHub Pages source saved`. You should refresh
    the page through the reload button of the browser until you see a new message
    at the top that says `Your site is live at` followed by an URL. That's
-   the URL of your website, open it up in a new tab of your web browser.
+   the URL of your website, open it up in a new tab of your web browser, either
+   by right-clicking on the URL and selecting `Open link in new tab` or by
+   clicking on the button `Visit site` that appears next to the URL.
 
     ![](mywebsite5.png)
 
@@ -194,7 +196,7 @@ not show you the URL.
 
 Each time that you push changes in the `docs` directory to the remote GitHub
 repo, GitHub will have to _rebuild_ and _publish_ your website, which may take 
-a few minutes. You can see how GitHub is building your webiste by going to the
+a few minutes. You can see how GitHub is building your website by going to the
 the page of your GitHub repo at
 `https://github.com/FCB-XXXX/my-website-YYYY`
 and clicking on the orange dot and then in the `Details` links from the pop-up
