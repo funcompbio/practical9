@@ -122,8 +122,8 @@ into another one.
 # Publish your website with GitHub Pages
 
 GitHub offers a free [web hosting service](https://en.wikipedia.org/wiki/Web_hosting_service)
-called [GitHub Pages](https://pages.github.com) with some
-[restrictions and usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages)
+called [GitHub Pages](https://docs.github.com/en/pages) with some
+[restrictions and usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)
 such as a maximum disk usage of 1 Gb. While those limits may be too tight for
 websites with high-resolution images and videos, they are large enough for text
 content with low resolution images and graphics, such as those produced in the
